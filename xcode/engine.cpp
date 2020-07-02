@@ -76,8 +76,8 @@ void Engine::SetBoardToAllDead() {
 void Engine::MakeRandomBoard() {
     for (int r = 0; r < 100; r++) {
         for (int c = 0; c < 100; c++) {
-            int temp = rand();
-            if (temp < 200000000) {
+            bool half_prob = (rand() % 100) < 60; // 50% probability
+            if (half_prob) {
                 board[r][c] = 1;
             }
         }
@@ -107,8 +107,15 @@ void Engine::MakeGlider() {
     board[11][12] = 1;
 }
 
+void Engine::MakeBlock() {
+    board[20][20] = 1;
+    board[20][21] = 1;
+    board[21][20] = 1;
+    board[21][21] = 1;
+}
+
 void Engine::MakeStillLife() {
-    
+    MakeBlock();
 }
 
 void Engine::MakeOscillators() {
@@ -118,4 +125,23 @@ void Engine::MakeOscillators() {
 
 void Engine::MakeSpaceShips() {
     MakeGlider();
+}
+
+void Engine::MakeGalaxy() {
+    for (int i = 0; i < 6; i++) {
+        board[30][30+i] = 1;
+        board[38][32+i] = 1;
+        board[30+i][30] = 1;
+        board[32+i][38] = 1;
+    }
+}
+
+void Engine::MakeAcorn() {
+    board[30][30] = 1;
+    board[30][31] = 1;
+    board[28][31] = 1;
+    board[29][33] = 1;
+    board[30][34] = 1;
+    board[30][35] = 1;
+    board[30][36] = 1;
 }

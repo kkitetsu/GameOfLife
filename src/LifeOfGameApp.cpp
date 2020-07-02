@@ -59,6 +59,10 @@ void lifeOfGameApp::keyDown( KeyEvent event )
         engine.BoardReset();
         engine.MakeOscillators();
     }
+    if (event.getChar() == '2') {
+        engine.BoardReset();
+        engine.MakeStillLife();
+    }
     if (event.getChar() == '3') {
         engine.BoardReset();
         engine.MakeSpaceShips();
@@ -67,6 +71,14 @@ void lifeOfGameApp::keyDown( KeyEvent event )
         engine.BoardReset();
         engine.MakeOscillators();
         engine.MakeSpaceShips();
+    }
+    if (event.getChar() == 'g') {
+        engine.BoardReset();
+        engine.MakeGalaxy();
+    }
+    if (event.getChar() == 'b') {
+        engine.BoardReset();
+        engine.MakeAcorn();
     }
 }
 

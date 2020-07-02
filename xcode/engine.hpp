@@ -26,6 +26,9 @@ public:
     void MakeStillLife();
     void MakeOscillators();
     void MakeSpaceShips();
+    void MakeBlock();
+    void MakeGalaxy();
+    void MakeAcorn();
     int GetAliveNumNearby(int x, int y);
     void BoardReset();
 private:
